@@ -261,6 +261,16 @@ class PlaceDetail
     }
 
     /**
+     * Determine has data.
+     *
+     * @return bool
+     */
+    public function hasData()
+    {
+        return empty($this->data);
+    }
+
+    /**
      * Long / short choice.
      *
      * @param  mixed  $data
