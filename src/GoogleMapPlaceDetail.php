@@ -93,7 +93,7 @@ class GoogleMapPlaceDetail
     {
         list($maxRetry, $retryTotalKey, $retryTotal) = $this->getRetryData($cacheKey);
 
-        return $retryTotal <= $maxRetry-2;
+        return $retryTotal > $maxRetry-2;
     }
 
     /**
