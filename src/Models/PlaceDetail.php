@@ -297,7 +297,7 @@ class PlaceDetail
      */
     public function hasData()
     {
-        return empty($this->data);
+        return ! empty($this->data);
     }
 
     /**
