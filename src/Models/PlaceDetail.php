@@ -102,6 +102,36 @@ class PlaceDetail
     }
 
     /**
+     * Get place latitude.
+     *
+     * @return mixed
+     */
+    public function getLatitude()
+    {
+        return array_get($this->getGeometry(), 'location.lat');
+    }
+
+    /**
+     * Get place longitude.
+     *
+     * @return mixed
+     */
+    public function getLongitude()
+    {
+        return array_get($this->getGeometry(), 'location.lng');
+    }
+
+    /**
+     * Get place geometry.
+     *
+     * @return mixed
+     */
+    public function getGeometry()
+    {
+        return array_get($this->data, 'result.geometry');
+    }
+
+    /**
      * Get formatted address.
      *
      * @return mixed
