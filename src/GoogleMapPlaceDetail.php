@@ -71,7 +71,7 @@ class GoogleMapPlaceDetail
         list($maxRetry, $retryTotalKey, $retryTotal) = $this->getRetryData($cacheKey);
 
         if (is_null($result)) {
-            if ($this->hasExceededMaxRetry($cacheKey)) {
+            if (! $this->hasExceededMaxRetry($cacheKey)) {
                 app('cache')->put(
                     $retryTotalKey,
                     ++$retryTotal,
