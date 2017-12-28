@@ -1,0 +1,53 @@
+{
+    "name": "nmfzone/google-map-place-detail-laravel",
+    "description": "Get Place Detail using Google Map API",
+    "keywords": [
+        "google",
+        "place details",
+        "laravel"
+    ],
+    "homepage": "https://github.com/nmfzone/google-map-place-detail-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nabil Muhammad Firdaus",
+            "email": "123.nabil.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/contracts": "5.*",
+        "illuminate/support": "5.*"
+    },
+    "require-dev": {
+        "laravel/laravel": "5.*",
+        "phpunit/phpunit" : "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NMFCODES\\GoogleMapPlaceDetail\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laravel\\": "vendor/laravel/laravel/app/",
+            "NMFCODES\\GoogleMapPlaceDetail\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NMFCODES\\GoogleMapPlaceDetail\\GoogleMapPlaceDetailServiceProvider"
+            ],
+            "aliases": {
+                "GoogleMapPlaceDetail": "NMFCODES\\GoogleMapPlaceDetail\\GoogleMapPlaceDetailFacade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
