@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 return [
 
     'api_key' => env('GOOGLE_MAPS_API_KEY', 'key'),
@@ -12,7 +14,7 @@ return [
 
         'max_retry' => 3,
 
-        'cache_duration' => 99999999,
+        'cache_duration' => Carbon::now()->addYears(10),
 
     ],
 
