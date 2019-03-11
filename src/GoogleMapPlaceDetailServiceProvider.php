@@ -2,7 +2,6 @@
 
 namespace NMFCODES\GoogleMapPlaceDetail;
 
-use Exception;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Illuminate\Foundation\Application as LaravelApplication;
