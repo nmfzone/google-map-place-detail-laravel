@@ -2,6 +2,8 @@
 
 namespace NMFCODES\GoogleMapPlaceDetail\Models;
 
+use Illuminate\Support\Arr;
+
 class PlaceDetail
 {
     /**
@@ -28,7 +30,7 @@ class PlaceDetail
      */
     public function getPlaceId()
     {
-        return array_get($this->data, 'result.place_id');
+        return Arr::get($this->data, 'result.place_id');
     }
 
     /**
@@ -38,7 +40,7 @@ class PlaceDetail
      */
     public function getName()
     {
-        return array_get($this->data, 'result.name');
+        return Arr::get($this->data, 'result.name');
     }
 
     /**
@@ -48,7 +50,7 @@ class PlaceDetail
      */
     public function getPhone()
     {
-        return array_get($this->data, 'result.formatted_phone_number');
+        return Arr::get($this->data, 'result.formatted_phone_number');
     }
 
     /**
@@ -58,7 +60,7 @@ class PlaceDetail
      */
     public function getInternationalPhone()
     {
-        return array_get($this->data, 'result.international_phone_number');
+        return Arr::get($this->data, 'result.international_phone_number');
     }
 
     /**
@@ -68,7 +70,7 @@ class PlaceDetail
      */
     public function getWebsite()
     {
-        return array_get($this->data, 'result.website');
+        return Arr::get($this->data, 'result.website');
     }
 
     /**
@@ -78,7 +80,7 @@ class PlaceDetail
      */
     public function getRating()
     {
-        return (float) array_get($this->data, 'result.rating', 0);
+        return (float) Arr::get($this->data, 'result.rating', 0);
     }
 
     /**
@@ -88,7 +90,7 @@ class PlaceDetail
      */
     public function getUrl()
     {
-        return array_get($this->data, 'result.url');
+        return Arr::get($this->data, 'result.url');
     }
 
     /**
@@ -98,7 +100,7 @@ class PlaceDetail
      */
     public function getOpeningHours()
     {
-        return collect(array_get($this->data, 'result.opening_hours'));
+        return collect(Arr::get($this->data, 'result.opening_hours'));
     }
 
     /**
@@ -108,7 +110,7 @@ class PlaceDetail
      */
     public function getLatitude()
     {
-        return array_get($this->getGeometry(), 'location.lat');
+        return Arr::get($this->getGeometry(), 'location.lat');
     }
 
     /**
@@ -118,7 +120,7 @@ class PlaceDetail
      */
     public function getLongitude()
     {
-        return array_get($this->getGeometry(), 'location.lng');
+        return Arr::get($this->getGeometry(), 'location.lng');
     }
 
     /**
@@ -128,7 +130,7 @@ class PlaceDetail
      */
     public function getGeometry()
     {
-        return array_get($this->data, 'result.geometry');
+        return Arr::get($this->data, 'result.geometry');
     }
 
     /**
@@ -138,7 +140,7 @@ class PlaceDetail
      */
     public function getFormattedAddress()
     {
-        return array_get($this->data, 'result.formatted_address');
+        return Arr::get($this->data, 'result.formatted_address');
     }
 
     /**
@@ -277,7 +279,7 @@ class PlaceDetail
      */
     public function getAddressComponents()
     {
-        return collect(array_get($this->data, 'result.address_components'))->values();
+        return collect(Arr::get($this->data, 'result.address_components'))->values();
     }
 
     /**
@@ -309,6 +311,6 @@ class PlaceDetail
      */
     private function longShortChoice($data, $short = false)
     {
-        return array_get($data, $short ? 'short_name' : 'long_name');
+        return Arr::get($data, $short ? 'short_name' : 'long_name');
     }
 }
